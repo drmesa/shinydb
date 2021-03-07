@@ -3,6 +3,7 @@ package com.nothingtothetable.shinydb.model;
 public class DomainGame
 {
     private Long id;
+    private String name;
     private DomainGeneration generation;
     private DomainAtlas locations;
 
@@ -14,6 +15,17 @@ public class DomainGame
     public DomainGame setId(Long id)
     {
         this.id = id;
+        return this;
+    }
+
+    public String getName()
+    {
+        return name;
+    }
+
+    public DomainGame setName(String name)
+    {
+        this.name = name;
         return this;
     }
 

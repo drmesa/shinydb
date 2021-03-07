@@ -9,7 +9,7 @@ public interface LocationService
 {
     void create(DomainLocation mon);
 
-    DomainLocation read(Long index);
+    DomainLocation read(Long id);
 
     DomainLocation readByDexId(Integer dexNum);
 
@@ -17,5 +17,5 @@ public interface LocationService
 
     DomainLocation update(DomainLocation mon);
 
-    void delete(Long index);
+    void delete(Long id);
 }

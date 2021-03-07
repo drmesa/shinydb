@@ -9,7 +9,7 @@ public interface MonService
 {
     void create(DomainMon mon);
 
-    DomainMon read(Long index);
+    DomainMon read(Long id);
 
     DomainMon readByDexId(Integer dexNum);
 
@@ -17,5 +17,5 @@ public interface MonService
 
     DomainMon update(DomainMon mon);
 
-    void delete(Long index);
+    void delete(Long id);
 }

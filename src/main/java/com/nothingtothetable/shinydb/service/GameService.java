@@ -9,7 +9,7 @@ public interface GameService
 {
     void create(DomainGame mon);
 
-    DomainGame read(Long index);
+    DomainGame read(Long id);
 
     DomainGame readByDexId(Integer dexNum);
 
@@ -17,5 +17,5 @@ public interface GameService
 
     DomainGame update(DomainGame mon);
 
-    void delete(Long index);
+    void delete(Long id);
 }
