@@ -7,10 +7,11 @@ public class DomainMon
 {
     private Long id;
     private Integer dexId;
-    private DomainForm form;
+    private DomainRegionalForm form;
     private String name;
     private List<DomainGame> games;
     private Map<DomainGame, String> bestOddsTable;
+    private Map<DomainGame, ShinyMethod> allOddsTable;
 
     public Long getId()
     {
@@ -32,12 +33,12 @@ public class DomainMon
         this.dexId = dexId;
     }
 
-    public DomainForm getForm()
+    public DomainRegionalForm getForm()
     {
         return form;
     }
 
-    public void setForm(DomainForm form)
+    public void setForm(DomainRegionalForm form)
     {
         this.form = form;
     }
@@ -60,5 +61,27 @@ public class DomainMon
     public void setGames(List<DomainGame> games)
     {
         this.games = games;
+    }
+
+    public Map<DomainGame, String> getBestOddsTable()
+    {
+        return bestOddsTable;
+    }
+
+    public DomainMon setBestOddsTable(Map<DomainGame, String> bestOddsTable)
+    {
+        this.bestOddsTable = bestOddsTable;
+        return this;
+    }
+
+    public Map<DomainGame, ShinyMethod> getAllOddsTable()
+    {
+        return allOddsTable;
+    }
+
+    public DomainMon setAllOddsTable(Map<DomainGame, ShinyMethod> allOddsTable)
+    {
+        this.allOddsTable = allOddsTable;
+        return this;
     }
 }
