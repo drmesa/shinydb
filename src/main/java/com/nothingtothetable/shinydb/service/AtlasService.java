@@ -11,8 +11,6 @@ public interface AtlasService // This might not use crud since an Atlas is just 
     
     DomainAtlas read(Long id);
 
-    DomainAtlas readByDexId(Integer dexNum);
-
     List<DomainAtlas> filter(DomainAtlasFilter filter);
 
     DomainAtlas update(DomainAtlas mon);

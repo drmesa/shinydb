@@ -1,0 +1,13 @@
+version: '3.7'
+services:
+  shinydb:
+    build: .
+    image: shinydb:latest
+    ports:
+      - 8080:8080
+    environment:
+        - SPRING_DATASOURCE_URL=jdbc:mysql://host.docker.internal:3306/shinydb?serverTimezone=UTC
+        - SPRING_DATASOURCE_USERNAME=shinydb
+        - SPRING_DATASOURCE_PASSWORD=testpass
+        - MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE=health,info,mappings
+    command: [ "-c", "java -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005 -cp app:app/lib/* ShinyDbApplication" ]

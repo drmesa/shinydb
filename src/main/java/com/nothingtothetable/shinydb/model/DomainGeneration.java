@@ -19,4 +19,25 @@ public enum DomainGeneration
         this.dbId = dbId;
         this.romanNumeral = romanNumeral;
     }
+
+    public Integer getDbId()
+    {
+        return dbId;
+    }
+
+    public String getRomanNumeral()
+    {
+        return romanNumeral;
+    }
+
+    public static DomainGeneration fromDbId(Integer dbId)
+    {
+        for (DomainGeneration gen : DomainGeneration.values()) {
+            if (gen.dbId.equals(dbId)) {
+                return gen;
+            }
+        }
+
+        throw new IllegalArgumentException(dbId + " is not a valid db id");
+    }
 }

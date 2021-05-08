@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nothingtothetable.shinydb.dao.GameDao">
+    <select id="read" parameterType="long" resultMap="gameResultMap">
+        SELECT
+            id,
+            name,
+            generation
+        FROM game
+        WHERE id = #{id}
+    </select>
+
+    <resultMap id="gameResultMap" type="DomainGame">
+        <id property="id" column="id" />
+        <result property="name" column="name"/>
+        <result property="generation" column="generation" typeHandler="com.nothingtothetable.shinydb.dao.typehandler.GenerationTypeHandler"/>
+    </resultMap>
+</mapper>
+

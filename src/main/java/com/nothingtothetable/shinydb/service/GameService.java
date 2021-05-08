@@ -11,8 +11,6 @@ public interface GameService
 
     DomainGame read(Long id);
 
-    DomainGame readByDexId(Integer dexNum);
-
     List<DomainGame> filter(DomainGameFilter filter);
 
     DomainGame update(DomainGame mon);

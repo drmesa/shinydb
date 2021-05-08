@@ -11,8 +11,6 @@ public interface LocationService
 
     DomainLocation read(Long id);
 
-    DomainLocation readByDexId(Integer dexNum);
-
     List<DomainLocation> filter(DomainLocationFilter filter);
 
     DomainLocation update(DomainLocation mon);
