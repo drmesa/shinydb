@@ -34,7 +34,6 @@
             <!-- conditional sql -->
         WHERE
             id = #{id}
-            AND dex_number = #{dexId} <!-- Fix this...should be either or...or just id? -->
     </update>
 
     <delete id="delete">
