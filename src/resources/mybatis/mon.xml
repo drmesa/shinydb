@@ -4,11 +4,42 @@
     <select id="read" parameterType="long" resultType="DomainMon">
         SELECT
             id,
-            dex_number as dexNumber,
+            dex_number as dexId,
             form,
             name
         FROM mon
         WHERE id = #{id}
     </select>
-</mapper>
 
+    <select id="filter" parameterType="DomainMonFilter" resultType="DomainMon">
+        SELECT
+            id,
+            dex_number as dexId,
+            form,
+            name
+        FROM mon
+        WHERE
+
+    </select>
+
+    <insert id="create">
+        INSERT INTO mon
+            (dex_number, form, name)
+        VALUES
+            (#{dexId}, #{form}, #{name})
+    </insert>
+
+    <update id="update">
+        UPDATE mon SET
+            <!-- conditional sql -->
+        WHERE
+            id = #{id}
+            AND dex_number = #{dexId} <!-- Fix this...should be either or...or just id? -->
+    </update>
+
+    <delete id="delete">
+        DELETE FROM mon
+        WHERE
+            id = #{id}
+    </delete>
+</mapper>
