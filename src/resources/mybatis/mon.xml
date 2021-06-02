@@ -19,7 +19,16 @@
             name
         FROM mon
         WHERE
-
+            1 = 1
+        <if test="ids != null">
+            AND ids in
+            <foreach item="id" index="index" collection="ids" open="(" separator="," close=")">
+            #{ids}
+            </foreach>
+        </if>
+        <if test="dexNums != null">
+            AND dex_number in [#{dexNums}]
+        </if>
     </select>
 
     <insert id="create">

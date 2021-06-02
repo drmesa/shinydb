@@ -35,7 +35,7 @@ public class MonController
         monService.create(mon);
     }
 
-    @GetMapping("filter") // TODO: Figure out what the standard is for this
+    @GetMapping("mons") // TODO: Figure out what the standard is for this
     public List<DomainMon> filter(DomainMonFilter filter)
     {
         return monService.filter(filter);
