@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("mon")
@@ -35,7 +36,7 @@ public class MonController
         monService.create(mon);
     }
 
-    @GetMapping("mons") // TODO: Figure out what the standard is for this
+    @GetMapping("/mons") // TODO: Figure out what the standard is for this
     public List<DomainMon> filter(DomainMonFilter filter)
     {
         return monService.filter(filter);
