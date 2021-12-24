@@ -37,4 +37,38 @@ public enum ShinyMethod
         this.genEightRate = genEightRate;
         this.pokemonGoRate = pokemonGoRate;
     }
+
+    public String getGenerationRate(DomainGeneration gen)
+    {
+        String rate;
+        switch (gen) {
+            case ONE -> {
+                return genOneRate;
+            }
+            case TWO -> {
+                return genTwoRate;
+            }
+            case THREE -> {
+                return genThreeRate;
+            }
+            case FOUR -> {
+                return genFourRate;
+            }
+            case FIVE -> {
+                return genFiveRate;
+            }
+            case SIX -> {
+                return genSixRate;
+            }
+            case SEVEN -> {
+                return genSevenRate;
+            }
+            case EIGHT -> {
+                return genEightRate;
+            }
+            default -> {
+                return pokemonGoRate;
+            }
+        }
+    }
 }

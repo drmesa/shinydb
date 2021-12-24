@@ -9,7 +9,8 @@ public enum DomainGeneration
     FIVE(5, "V"),
     SIX(6, "VI"),
     SEVEN(7, "VII"),
-    EIGHT(8, "VIII");
+    EIGHT(8, "VIII"),
+    GO(0, "GO");
 
     private Integer dbId;
     private String romanNumeral;
