@@ -6,6 +6,7 @@ public class DomainMonFilter
 {
     private List<Long> ids;
     private List<Integer> dexNums;
+    private List<String> names;
 
     public List<Long> getIds()
     {
@@ -26,6 +27,17 @@ public class DomainMonFilter
     public DomainMonFilter setDexNums(List<Integer> dexNums)
     {
         this.dexNums = dexNums;
+        return this;
+    }
+
+    public List<String> getNames()
+    {
+        return names;
+    }
+
+    public DomainMonFilter setNames(List<String> names)
+    {
+        this.names = names;
         return this;
     }
 }

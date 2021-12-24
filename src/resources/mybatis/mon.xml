@@ -32,6 +32,12 @@
                 #{dexNums}
             </foreach>
         </if>
+        <if test="names != null">
+            AND name in
+            <foreach item="names" index="index" collection="names" open="(" separator="," close=")">
+                #{names}
+            </foreach>
+        </if>
     </select>
 
     <insert id="create">

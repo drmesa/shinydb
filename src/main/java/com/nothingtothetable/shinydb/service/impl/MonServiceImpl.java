@@ -1,6 +1,7 @@
 package com.nothingtothetable.shinydb.service.impl;
 
 import com.nothingtothetable.shinydb.dao.MonDao;
+import com.nothingtothetable.shinydb.model.DomainGame;
 import com.nothingtothetable.shinydb.model.DomainMon;
 import com.nothingtothetable.shinydb.model.DomainMonFilter;
 import com.nothingtothetable.shinydb.service.MonService;
@@ -43,6 +44,12 @@ public class MonServiceImpl implements MonService
     public List<DomainMon> filter(DomainMonFilter filter)
     {
         return monDao.filter(filter);
+    }
+
+    private void inflateMons(List<DomainMon> mons)
+    {
+        List<DomainGame> games;
+
     }
 
     @Override
