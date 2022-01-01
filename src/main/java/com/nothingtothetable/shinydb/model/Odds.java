@@ -17,6 +17,8 @@ public class Odds
         this.denominator = denominator;
         this.oddsString = numerator + "/" + denominator;
         this.odds = new BigDecimal(numerator).divide(new BigDecimal(denominator));
+        this.fiftyPercent = Math.toIntExact(Math.round(Math.log(1 - .5) / Math.log(((denominator - 1d) / (denominator)))));
+        this.ninetyPercent = Math.toIntExact(Math.round(Math.log(1 - .9) / Math.log(((denominator - 1d) / (denominator)))));
     }
 
     public Integer getNumerator()
@@ -27,6 +29,7 @@ public class Odds
     public Odds setNumerator(Integer numerator)
     {
         this.numerator = numerator;
+        calculateOdds();
         return this;
     }
 
@@ -38,6 +41,7 @@ public class Odds
     public Odds setDenominator(Integer denominator)
     {
         this.denominator = denominator;
+        calculateOdds();
         return this;
     }
 
@@ -46,20 +50,26 @@ public class Odds
         return oddsString;
     }
 
-    public Odds setOddsString(String oddsString)
-    {
-        this.oddsString = oddsString;
-        return this;
-    }
-
     public BigDecimal getOdds()
     {
         return odds;
     }
 
-    public Odds setOdds(BigDecimal odds)
+    public Integer getFiftyPercent()
     {
-        this.odds = odds;
-        return this;
+        return fiftyPercent;
+    }
+
+    public Integer getNinetyPercent()
+    {
+        return ninetyPercent;
+    }
+
+    private void calculateOdds()
+    {
+        this.oddsString = numerator + "/" + denominator;
+        this.odds = new BigDecimal(numerator).divide(new BigDecimal(denominator));
+        this.fiftyPercent = Math.toIntExact(Math.round(Math.log(1 - .5) / Math.log(((denominator - 1d) / (denominator)))));
+        this.ninetyPercent = Math.toIntExact(Math.round(Math.log(1 - .9) / Math.log(((denominator - 1d) / (denominator)))));
     }
 }
