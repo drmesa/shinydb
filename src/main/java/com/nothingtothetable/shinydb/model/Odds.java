@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 
 public class Odds
 {
+    private static final String ZERO_STRING = "Impossible";
     private Integer numerator;
     private Integer denominator;
     private String oddsString;
@@ -13,12 +14,21 @@ public class Odds
 
     public Odds(Integer numerator, Integer denominator)
     {
-        this.numerator = numerator;
-        this.denominator = denominator;
-        this.oddsString = numerator + "/" + denominator;
-        this.odds = new BigDecimal(numerator).divide(new BigDecimal(denominator));
-        this.fiftyPercent = Math.toIntExact(Math.round(Math.log(1 - .5) / Math.log(((denominator - 1d) / (denominator)))));
-        this.ninetyPercent = Math.toIntExact(Math.round(Math.log(1 - .9) / Math.log(((denominator - 1d) / (denominator)))));
+        if (numerator != null && denominator != null) {
+            this.numerator = numerator;
+            this.denominator = denominator;
+            this.oddsString = numerator + "/" + denominator;
+            this.odds = new BigDecimal(numerator).divide(new BigDecimal(denominator));
+            this.fiftyPercent = Math.toIntExact(Math.round(Math.log(1 - .5) / Math.log(((denominator - 1d) / (denominator)))));
+            this.ninetyPercent = Math.toIntExact(Math.round(Math.log(1 - .9) / Math.log(((denominator - 1d) / (denominator)))));
+        } else {
+            this.numerator = 0;
+            this.denominator = 0;
+            this.oddsString = ZERO_STRING;
+            this.odds = BigDecimal.ZERO;
+            this.fiftyPercent = 0;
+            this.ninetyPercent = 0;
+        }
     }
 
     public Integer getNumerator()
